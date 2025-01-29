@@ -6,22 +6,43 @@ FingerprintJS is a browser fingerprinting library that queries browser attribute
 
 This repository is a fork of FingerprintJS that was originally licensed under the MIT License. It has been rereleased as `@sparkstone/fingerprintjs` under the same MIT license.
 
+## Installation
+
+You can install `@sparkstone/fingerprintjs` using your preferred package manager:
+
+### pnpm
+
+```sh
+pnpm add @sparkstone/fingerprintjs
+```
+
+### npm
+
+```sh
+npm install @sparkstone/fingerprintjs
+```
+
+### yarn
+
+```sh
+yarn add @sparkstone/fingerprintjs
+```
+
 ## Quick start
 
-```html
-<script>
-    // Initialize the agent at application startup.
-    const fpPromise = import('https://openfpcdn.io/fingerprintjs/v3').then((FingerprintJS) => FingerprintJS.load())
+Here is a basic TypeScript example of how to use FingerprintJS:
 
-    // Get the visitor identifier when you need it.
-    fpPromise
-        .then((fp) => fp.get())
-        .then((result) => {
-            // This is the visitor identifier:
-            const visitorId = result.visitorId
-            console.log(visitorId)
-        })
-</script>
+```typescript
+import FingerprintJS from '@sparkstone/fingerprintjs'
+
+// Initialize the agent at application startup.
+const fp = await FingerprintJS.load()
+
+// Get the visitor identifier when you need it.
+const result = await fp.get()
+
+// This is the visitor identifier:
+console.log(result.visitorId)
 ```
 
 📕 [Full documentation](docs/api.md)
