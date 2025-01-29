@@ -17,23 +17,12 @@ async function startPlayground() {
   const startTime = Date.now()
 
   try {
-    const { visitorId, confidence, components } = await getVisitorData()
+    const { visitorId, components } = await getVisitorData()
     const totalTime = Date.now() - startTime
     output.innerHTML = ''
     addOutputSection({ output, header: 'Visitor identifier:', content: visitorId, size: 'giant' })
     addOutputSection({ output, header: 'Time took to get the identifier:', content: `${totalTime}ms`, size: 'big' })
-    addOutputSection({
-      output,
-      header: 'Confidence score:',
-      content: String(confidence.score),
-      comment: confidence.comment && {
-        html: confidence.comment.replace(
-          /(upgrade\s+to\s+)?pro(\s+version)?(:\s+(https?:\/\/\S+))?/gi,
-          '<a href="$4" target="_blank">$&</a>',
-        ),
-      },
-      size: 'big',
-    })
+
     addOutputSection({ output, header: 'User agent:', content: navigator.userAgent })
     addOutputSection({
       output,
@@ -43,7 +32,6 @@ async function startPlayground() {
 
     initializeDebugButtons(`Visitor identifier: \`${visitorId}\`
 Time took to get the identifier: ${totalTime}ms
-Confidence: ${JSON.stringify(confidence)}
 User agent: \`${navigator.userAgent}\`
 Entropy components:
 \`\`\`

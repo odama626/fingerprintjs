@@ -67,3 +67,15 @@ Using [Issues](https://github.com/odama626/fingerprintjs/issues) and [Discussion
 ## Contributing
 
 See the [contribution guidelines](contributing.md) to learn how to start a playground, test, and build.
+
+## Changelog
+
+3.5.0 switch to microbundle for building
+3.5.1 remove confidence scoring, it was hard coded and fake?
+
+```ts
+// old pro scoring method -- upgrade to pro to get this score
+function deriveProConfidenceScore(openConfidenceScore: number): number {
+    return round(0.99 + 0.01 * openConfidenceScore, 0.0001)
+}
+```
