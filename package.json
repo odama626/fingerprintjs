@@ -1,5 +1,5 @@
 {
-  "name": "@fingerprintjs/fingerprintjs",
+  "name": "@sparkstone/fingerprintjs",
   "description": "Browser fingerprinting library with the highest accuracy and stability",
   "version": "3.4.2",
   "keywords": [

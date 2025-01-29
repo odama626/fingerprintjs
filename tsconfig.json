@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "moduleResolution": "node16",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
     "target": "es5",
     "removeComments": false,
     "resolveJsonModule": true,
@@ -14,11 +14,7 @@
   },
   // It must include everything that Rollup will encounter,
   // and preferably nothing else in order not to compile excess files
-  "include": [
-    "src/index.ts",
-    "src/**/*.d.ts",
-    "resources/content_blocking/selectors_tester.ts"
-  ],
+  "include": ["src/index.ts", "src/**/*.d.ts", "resources/content_blocking/selectors_tester.ts"],
   "ts-node": {
     "compilerOptions": {
       "module": "commonjs",
